@@ -1,0 +1,173 @@
+
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --accent: #0e5484;   /* blue */
+  --accent2: #0f4539;  /* green */
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+.profile {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.top {
+  max-width: 980px;
+  margin: 18px auto 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top h1 {
+  margin: 0;
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 6px 0 10px;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.contact {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.profile {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+}
+
+.nav {
+  max-width: 980px;
+  margin: 12px auto;
+  padding: 10px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav a {
+  color: white;
+  background: var(--accent);
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  background: var(--accent2);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--accent2);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.meta {
+  margin-top: -6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pill-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill-list li {
+  background: #e0f2fe;
+  color: #075985;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.edu-table th,
+.edu-table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+}
+
+.edu-table th {
+  background: #e2e8f0;
+}
+
+.footer {
+  max-width: 980px;
+  margin: 0 auto 18px;
+  padding: 10px 18px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.footer .accent {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.footer a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
