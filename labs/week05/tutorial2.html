@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet Tutorial 2 - Mobile</title>
+    <meta charset="utf-8" />
+
+    <!-- Mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+// =======================
+// Initialize map (fullscreen)
+// =======================
+var map = L.map('map').fitWorld();
+
+// =======================
+// Add tile layer
+// =======================
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// =======================
+// Locate user
+// =======================
+map.locate({setView: true, maxZoom: 16});
+
+// =======================
+// When location found
+// =======================
+function onLocationFound(e) {
+    var radius = e.accuracy;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are within " + radius.toFixed(2) + " meters from this point")
+        .openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+// =======================
+// When location fails
+// =======================
+function onLocationError(e) {
+    alert(e.message);
+}
+
+// =======================
+// Event listeners
+// =======================
+map.on('locationfound', onLocationFound);
+map.on('locationerror', onLocationError);
+
+</script>
+
+</body>
+</html>
